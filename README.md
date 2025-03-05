@@ -16,15 +16,15 @@ docker build -t img-service-a .
 docker build -t img-service-b .
 
 # 4. 컨테이너 생성
-docker run -d --name service-b \
+docker run -d --name service-a \
  --network my-network \
  -p 18080:8080 \
  img-service-a
 
 docker run -d --name service-b \
  --network my-network \
- -p 18080:8080 \
- img-service-a
+ -p 18081:8080 \
+ img-service-b
 ```
 
 http://localhost:18080/hi
